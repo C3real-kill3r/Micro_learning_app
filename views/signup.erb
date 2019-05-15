@@ -1,0 +1,16 @@
+<form action="/signup" method="post" style="border:1.8px solid #610d0d" class="form-inline well">
+    <div class="container col-8">
+        <h1>Sign Up</h1>
+        <% if flash[:notice] %>
+            <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
+        <% end %>
+        <p>Fill in this form to create an account.</p>
+        <hr>
+        <input class="form-control" type="text" name="name" placeholder="Enter Username" required><br/><br/>
+        <input class="form-control" type="text" placeholder="Enter Email" name="email" required><br/><br/>
+        <input class="form-control" type="password" placeholder="Enter Password" name="password" required><br/><br/>
+        <input class="form-control" type="password" placeholder="Repeat Password" name="confirm_password" required><br/><br/>
+        <input class="btn btn-primary" type='submit' value='Sign Up'><br/><br/>
+        <p>Already have an account, click <a href="#">here</a><br/><br/>
+    </div>
+</form>
