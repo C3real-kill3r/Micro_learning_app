@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   end
 
   # compare hashed password with the password given
-  def test_password(password, hash)
+  def check_password(password, hash)
     BCrypt::Password.new(hash) == password
   end
 end
