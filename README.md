@@ -10,7 +10,6 @@ This app was developed using ruby sinatra, with erb as template.
 - Change directory to the app's root with ```cd Micro-learning-app```
 - Then run ```bundle install```  to install the dependencies.
 - Run ```rake db:migrate``` to migrate database tables.
-- Run ```rake db:seed``` to seed database tables.
 - Start the server with ```ruby app.rb```
 - Then visit ```http://localhost:4567``` to view the app.
 

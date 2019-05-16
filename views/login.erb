@@ -1,0 +1,13 @@
+<form action="/login" method="post" style="border:1.8px solid #610d0d; border-radius: 25px;" class="form-inline well">
+    <div class="container col-8">
+        <h1>Login </h1>
+        <% if flash[:notice] %>
+            <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
+        <% end %>
+        <hr>
+        <input class="form-control" type="text" placeholder="Enter Email" name="email" required><br/><br/>
+        <input class="form-control" type="password" placeholder="Enter Password" name="password" required><br/><br/>
+        <input class="btn btn-primary" type='submit' value='Login'><br/><br/>
+        <p>Dont have an account? click <a href="/signup/form">here</a><br/><br/>
+    </div>
+</form>
