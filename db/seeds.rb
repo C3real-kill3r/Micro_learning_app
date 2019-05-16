@@ -1,19 +1,16 @@
 require_relative '../models/category'
+require 'news-api'
 
-categories = [
-    {name: 'entertainment'},
-    {name: 'politics'},
-    {name: 'religion'},
-    {name: 'weather'},
-    {name: 'business'},
-    {name: 'science'},
-    {name: 'sports'},
-    {name: 'technology'},
-    {name: 'health'},
-    {name: 'traffic'},
-    {name: 'breaking news'}
-]
 
-categories.each do |category|
-  Category.create(category)
+newsapi = News.new('746b9b93077d454098492aa96bee42a6')
+
+sources = newsapi.get_sources(country: 'us', language: 'en')
+
+@categories = []
+sources.each do |source|
+  @categories.push(source.category)
+end
+
+@categories.uniq.each do |category|
+  Category.create(name: category)
 end

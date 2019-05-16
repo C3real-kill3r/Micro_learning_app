@@ -28,13 +28,17 @@
 							<%=username%>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="/select_categories">My categories</a>
+							<% if !session[:user_id].nil? %>
+								<a class="dropdown-item" href="/home">My pages</a>
 								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/select_categories">Manage categories</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/logout">Logout</a>
+							<% else %>
 								<a class="dropdown-item" href="/signup/form">Signup</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="/login/form">Login</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/logout">Logout</a>
+							<% end %>
 							</div>
 						</li>
 					</ul>
@@ -54,5 +58,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-  </body>
+	<footer id="news-api" class="text-center footer">
+      <p>Powered by <a href="https://newsapi.org/">News Api</a></p>
+    </footer>
+	</body>
 </html>

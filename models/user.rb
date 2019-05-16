@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
       message: "Incorrect email format, try example@example.com"}
 
   has_many :user_categories
+  has_many :categories, through: :user_categories
 
   def hash_password(password)
     BCrypt::Password.create(password).to_s

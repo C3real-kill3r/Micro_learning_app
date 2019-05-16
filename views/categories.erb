@@ -1,11 +1,11 @@
-<div style="border:1.7px solid #3b3758; border-radius: 25px;">
+<div style="border:1.7px solid #3b3758; border-radius: 25px; padding: 15px">
     <div class="container col-8">
     <div class="col-9">
-        <h3>Select a category!</h3>
+        <h3>Select a Category!</h3>
         <p>Below are some of the amazing categories you can coose from.</p>
         <hr>
             <form action="/select_categories" method="post">
-                <div class="form-check">
+                <div class="form-check-inline mb-3" style="padding: 8px">
                 <%= checkbox(:category, :choose, cat) %>
                 </div>
                 <% if cat %>
@@ -16,6 +16,18 @@
                 </div>
                 <br/><br/>
             </form>
+            <% if user_cat %>
+            <div col-9 class="row">
+                <% user_cat.each do |each_category| %>
+                <form action="/deselect_category" method="post">
+                <div style="padding: 5px">
+                <input type="hidden" name="delete" value="<%= each_category %>"  />
+                <input id="delete" class="btn btn-danger" value="Remove <%= each_category %>" type="submit"/>
+                </div>
+                </form>
+            <% end %>
+            </div>
+            <% end %>
         </div>
 	</div>
 </div>

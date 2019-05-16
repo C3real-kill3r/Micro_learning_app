@@ -4,7 +4,11 @@ require 'sinatra/flash'
 require './config/environments' #database configuration
 require './models/user'
 require './models/category'
+require './models/user_category'
+require './helpers/add_categories'
 require 'sinatra/form_helpers'
+require './helpers/news_helper'
+require 'news-api'
 
 enable :sessions
 helpers Sinatra::FormHelpers
@@ -39,9 +43,13 @@ end
 
 get '/select_categories' do
   if !session[:user_id].nil?
+    @session = session[:user_id]
+    user = User.find_by(id: @session)
     all_categories = Category.all
-    categories = all_categories.each.map { |category| category.name }
-    erb :categories, locals: { cat: categories}
+    categories_zote = all_categories.each.map { |category| category.name }
+    user_categories = user.categories.each.map {|cat| cat.name}
+    all_categories = categories_zote - user_categories
+    erb :categories, locals: { cat: all_categories, user_cat: user_categories}
   else
     redirect uri '/login/form'
   end
@@ -50,6 +58,20 @@ end
 get '/logout' do
   session.clear
   redirect uri '/login/form'
+end
+
+get '/home' do
+  if !session[:user_id].nil?
+    @session = session[:user_id]
+    user = User.find_by(id: @session)
+    user_cats = user.categories.each.map {|cat| cat.name }
+    category = user_cats.first
+    news = News_Api.new
+    fetched = news.fetch_specific_category category
+    erb :results, locals: {all_categories: user_cats, fetched: fetched}
+  else
+    redirect uri '/login/form'
+  end
 end
 
 post '/signup' do
@@ -70,7 +92,7 @@ post '/signup' do
       user.save
       users = User.find_by(email: params[:email])
       session[:user_id] = users.id
-      redirect '/'
+      redirect '/login/form'
     rescue StandardError => e
       flash[:notice] = 'Similar user-name or email exists'
       redirect uri '/signup/form'
@@ -89,4 +111,32 @@ post '/login' do
     flash[:notice] = 'Invalid login credentials'
     redirect uri '/login/form'
   end
+end
+
+post '/select_categories' do
+  if !session[:user_id].nil?
+    selected = params[:category]
+    if !selected
+      redirect uri '/select_categories'
+    else
+      selected = params[:category]['choose']
+      selected = selected.kind_of?(Array) ? selected : [selected]
+      unless selected.empty?
+        selected.each do |single_selected|
+          add_categories(single_selected)
+        end
+      end
+      redirect uri '/select_categories'
+    end
+  end
+end
+
+post '/deselect_category' do
+  @session = session[:user_id]
+  user = User.find_by(id: @session)
+  remove = params[:delete]
+  if remove
+    user.categories.delete(Category.find_by(name: params[:delete]))
+  end
+  redirect uri '/select_categories'
 end
