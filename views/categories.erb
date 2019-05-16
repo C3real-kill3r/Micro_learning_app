@@ -1,0 +1,21 @@
+<div style="border:1.7px solid #3b3758; border-radius: 25px;">
+    <div class="container col-8">
+    <div class="col-9">
+        <h3>Select a category!</h3>
+        <p>Below are some of the amazing categories you can coose from.</p>
+        <hr>
+            <form action="/select_categories" method="post">
+                <div class="form-check">
+                <%= checkbox(:category, :choose, cat) %>
+                </div>
+                <% if cat %>
+                <div>
+                <input class="btn btn-primary" type="submit" value="Submit"><br/><br/>
+                </div>
+                <% end %>
+                </div>
+                <br/><br/>
+            </form>
+        </div>
+	</div>
+</div>
