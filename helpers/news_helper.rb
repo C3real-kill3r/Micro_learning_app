@@ -7,9 +7,9 @@ class News_Api
   def fetch_all_categories
     everything = @@news_api.get_everything(
       language: 'en',
-      sources:'techcrunch,talksport,the-next-web,
+      sources:'espn,talksport,fox-news,
                 national-geographic, al-jazeera-english,
-                crypto-coins-news',
+                cnbc, bbc-news,the-verge,the-new-york-times,ign',
       page: 1
   )
   end
