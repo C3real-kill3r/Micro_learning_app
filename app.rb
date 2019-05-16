@@ -66,9 +66,14 @@ get '/home' do
     user = User.find_by(id: @session)
     user_cats = user.categories.each.map {|cat| cat.name }
     category = user_cats.first
-    news = News_Api.new
-    fetched = news.fetch_specific_category category
-    erb :results, locals: {all_categories: user_cats, fetched: fetched}
+    if category
+      news = News_Api.new
+      fetched = news.fetch_specific_category category
+      erb :results, locals: {all_categories: user_cats, fetched: fetched}
+    else
+      flash[:error] = "You have not selected a category yet"
+      redirect uri '/select_categories'
+    end
   else
     redirect uri '/login/form'
   end
@@ -93,7 +98,7 @@ post '/signup' do
       users = User.find_by(email: params[:email])
       session[:user_id] = users.id
       redirect '/login/form'
-    rescue StandardError => e
+    rescue StandardError => error
       flash[:notice] = 'Similar user-name or email exists'
       redirect uri '/signup/form'
     end

@@ -1,6 +1,9 @@
 <div style="border:1.7px solid #3b3758; border-radius: 25px; padding: 15px">
     <div class="container col-8">
     <div class="col-9">
+        <% if flash[:error] %>
+            <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
+        <% end %>
         <h3>Select a Category!</h3>
         <p>Below are some of the amazing categories you can coose from.</p>
         <hr>
@@ -19,14 +22,15 @@
             <% if user_cat %>
             <div col-9 class="row">
                 <% user_cat.each do |each_category| %>
-                <form action="/deselect_category" method="post">
-                <div style="padding: 5px">
-                <input type="hidden" name="delete" value="<%= each_category %>"  />
-                <input id="delete" class="btn btn-danger" value="Remove <%= each_category %>" type="submit"/>
-                </div>
-                </form>
-            <% end %>
+                    <form action="/deselect_category" method="post">
+                        <div style="padding: 5px">
+                            <input type="hidden" name="delete" value="<%= each_category %>"  />
+                            <input id="delete" class="btn btn-danger" value="Remove <%= each_category %>" type="submit"/>
+                        </div>
+                    </form>
+                <% end %>
             </div>
+            <p><a href="/home">view results</a><br/><br/>
             <% end %>
         </div>
 	</div>
