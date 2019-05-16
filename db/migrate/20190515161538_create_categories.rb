@@ -5,6 +5,6 @@ class CreateCategories < ActiveRecord::Migration[5.2]
     end
   end
   def down
-  	drop_table :users
+  	drop_table :categories
   end
 end

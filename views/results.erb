@@ -1,0 +1,28 @@
+<div class="container-fluid" xmlns="http://www.w3.org/1999/html" style="border:1.8px solid #610d0d; border-radius: 25px;">
+  <div class="row grid-divider">
+    <div class="col-sm-2">
+    </div>
+    <div class="col-sm-8" id="right">
+      <div class="col-padding">
+        <ul class="list-group list-group-flush">
+          <% if fetched %>
+              <% fetched.each do |category| %>
+                  <li class="list-group-item">
+                    <div class="media">
+                      <div class="media-left media-middle">
+                          <img style="height:120px; width:120px; border-radius: 50%" src=<%=category.urlToImage %>>
+                      </div>
+                      <div class="media-body" style="padding: 8px;">
+                        <h4 class="media-heading"><%= category.name %></h4>
+                        <p><%= category.title %>.</p>
+                        <a class="pull-right" href=<%= category.url %>>Read More</a>
+                      </div>
+                    </div>
+                  </li>
+              <% end %>
+            <% end %>
+        </ul>
+      </div>
+     </div>
+  </div>
+</div>
