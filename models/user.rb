@@ -9,9 +9,10 @@ class User < ActiveRecord::Base
 
   validates :email, format: {
       with: EMAIL,
-      message: "Email format not correct e.g. example@example.com"}
+      message: "Incorrect email format, try example@example.com"}
 
-  # hash a password
+  has_many :user_categories
+
   def hash_password(password)
     BCrypt::Password.create(password).to_s
   end

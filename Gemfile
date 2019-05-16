@@ -6,3 +6,5 @@ gem "sinatra-activerecord"
 gem "pg"
 gem "bcrypt"
 gem 'sinatra-flash'
+gem 'news-api'
+gem "sinatra-formhelpers-ng"
