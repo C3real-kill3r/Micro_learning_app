@@ -79,6 +79,11 @@ get '/home' do
   end
 end
 
+not_found do
+  status 404
+  erb :oops
+end
+
 post '/signup' do
     password = params[:password].strip
     confirm_password = params[:confirm_password].strip

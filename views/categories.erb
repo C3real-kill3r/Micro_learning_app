@@ -21,11 +21,11 @@
             </form>
             <% if user_cat %>
             <div col-9 class="row">
-                <% user_cat.each do |each_category| %>
+                <% user_cat.each do |cat| %>
                     <form action="/deselect_category" method="post">
                         <div style="padding: 5px">
-                            <input type="hidden" name="delete" value="<%= each_category %>"  />
-                            <input id="delete" class="btn btn-danger" value="Remove <%= each_category %>" type="submit"/>
+                            <input type="hidden" name="delete" value="<%= cat %>"  />
+                            <input id="delete" class="btn btn-danger" value="Remove <%= cat %>" type="submit"/>
                         </div>
                     </form>
                 <% end %>
