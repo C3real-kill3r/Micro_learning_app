@@ -1,5 +1,5 @@
 # Micro_learning_app
-A web responsive application that sends you one page result with snippets and links to pages about something you want to learn. You select a category you'd like to get more materials from and the application fetches the results from the available sources provided by the [NewsAPI](https://newsapi.org/).
+A web responsive application that sends you one page result with 20 snippets and links to pages about a selected subject(category) you want to materials on. You select a category you'd like to get more materials from and the application fetches the results from the available sources provided by the [NewsAPI](https://newsapi.org/).
 
 ## Installation
 - Clone this repository to have the app on your machine with ```git clone https://github.com/C3real-kill3r/Micro_learning_app.git```
