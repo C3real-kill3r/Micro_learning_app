@@ -5,7 +5,7 @@ A responsive web application that sends you one page result with 20 snippets and
 - Clone this repository to have the app on your machine with ```git clone https://github.com/C3real-kill3r/Micro_learning_app.git```
 - Change directory to the app's root with ```cd Micro-learning-app```
 - Then run ```bundle install```  to install the dependencies.
-- Run ```rake db:create``` to create the development server.
+- Run ```rake db:create``` to create the development database.
 - Run ```rake db:migrate``` to migrate database tables.
 - Run ```rake db:seed``` to update the categories table.
 - Start the server with ```ruby app.rb```
