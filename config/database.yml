@@ -1,6 +1,9 @@
 development:
   adapter: postgresql
-  database: development
-  username: <%= ENV['PG_USER'] %>
-  password: <%= ENV['PG_PASS'] %>
-  host: localhost
+  database: microlearning_development
+test:
+  adapter: 'postgresql'
+  database: microlearning_test
+production:
+  adapter: 'postgresql'
+  database: microlearning_production

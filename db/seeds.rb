@@ -1,4 +1,4 @@
-require_relative '../models/category'
+require_relative '../app/models/category'
 require 'news-api'
 
 

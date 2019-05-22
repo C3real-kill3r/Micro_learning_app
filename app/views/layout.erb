@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   </head>
   <body>
-		<div class="container">
+		<div class="container col-11">
 
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="navbar-brand" href="/">Microlearning App</a>
@@ -29,11 +29,9 @@
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<% if !session[:user_id].nil? %>
-								<a class="dropdown-item" href="/home">My pages</a>
+								<a class="dropdown-item" href="/results">My pages</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="/select_categories">Manage categories</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/logout">Logout</a>
 							<% else %>
 								<a class="dropdown-item" href="/signup/form">Signup</a>
 								<div class="dropdown-divider"></div>
@@ -42,6 +40,14 @@
 							</div>
 						</li>
 					</ul>
+					<form class="form-inline my-2 my-lg-0">
+					<% if !session[:user_id].nil? %>
+						<a href="/logout" class="btn btn-outline-danger my-2 my-sm-0" role="button">Logout</a>
+					<% else %>
+						<a href="/login/form" class="btn btn-outline-success mr-sm-2" role="button">login</a>
+						<a href="/signup/form" class="btn btn-outline-primary my-2 my-sm-0" role="button">Signup</a>
+					<% end %>
+					</form>
 				</div>
 			</nav>
 
