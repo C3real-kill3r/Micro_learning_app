@@ -13,14 +13,14 @@ A responsive web application that sends you one page result with 20 snippets and
 
 
 ## Installed gems
-- sinatra
-- activerecord
-- sinatra-activerecord
-- pg
-- bcrypt
-- sinatra-flash
-- news-api
-- sinatra-formhelpers-ng
+- sinatra - a DSL for quickly creating web applications in Ruby with minimal effort:
+- activerecord -  provide an interface and binding between the tables in a relational database and the Ruby program code that manipulates database records. 
+- sinatra-activerecord - extends Sinatra with extension methods and Rake tasks for dealing with an SQL database using the ActiveRecord ORM.
+- pg - a module that allows Ruby programs to interact with the PostgreSQL database engine.
+- bcrypt - a hashing function that allows us to build a password security platform that can scale with computation power.
+- sinatra-flash - a gem that allows us to pop up little messages alerting your users of important things.
+- news-api - a simple HTTP REST API for searching and retrieving live articles from all over the web.
+- sinatra-formhelpers-ng - a suite of helper methods built to make building forms in Sinatra an easy task.
 
 ## Technologies Used
 * [Ruby](https://www.ruby-lang.org/en/)
