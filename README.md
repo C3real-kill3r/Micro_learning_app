@@ -21,6 +21,8 @@ A responsive web application that sends you one page result with 20 snippets and
 - sinatra-flash - a gem that allows us to pop up little messages alerting your users of important things.
 - news-api - a simple HTTP REST API for searching and retrieving live articles from all over the web.
 - sinatra-formhelpers-ng - a suite of helper methods built to make building forms in Sinatra an easy task.
+- shotgun — This is an automatic reloading version of the rackup command that’s shipped with Rack. Meaning you can alter code in your server, and have it live without needing to restart it.
+- Database Cleaner — We will use this to manage our test database before it runs, while it runs, and after it runs.
 
 ## Technologies Used
 * [Ruby](https://www.ruby-lang.org/en/)
