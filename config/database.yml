@@ -6,4 +6,8 @@ test:
   database: microlearning_test
 production:
   adapter: 'postgresql'
-  database: microlearning_production
+  encoding: 'unicode'
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: d1rd8mgir50ja3
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
