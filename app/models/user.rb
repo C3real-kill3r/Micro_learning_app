@@ -5,11 +5,13 @@ class User < ActiveRecord::Base
   EMAIL = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
   validates :name,
-            presence: true
+            :presence => true,
+            :uniqueness => true
 
   validates :email, format: {
       with: EMAIL,
-      message: "Incorrect email format, try example@example.com"}
+      message: "Incorrect email format, try example@example.com"},
+      :uniqueness => true
 
   has_many :user_categories
   has_many :categories, through: :user_categories

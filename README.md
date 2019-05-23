@@ -8,13 +8,17 @@ A responsive web application that sends you one page result with 20 snippets and
 - Run ```rake db:create``` to create the development database.
 - Run ```rake db:migrate``` to migrate database tables.
 - Run ```rake db:seed``` to update the categories table.
-- Start the server with ```ruby app.rb```
-- Then visit ```http://localhost:4567``` to view the app.
+- Start the server by running ```shotgun```
+- Then visit ```http://localhost:9393``` to view the app.
+
+## Running tests
+- make migrations into the test db by running ```rake db:migrate RACK_ENV=test```
+- run ```rspec```
 
 
 ## Installed gems
 - sinatra - a DSL for quickly creating web applications in Ruby with minimal effort:
-- activerecord -  provide an interface and binding between the tables in a relational database and the Ruby program code that manipulates database records. 
+- activerecord -  provide an interface and binding between the tables in a relational database and the Ruby program code that manipulates database records.
 - sinatra-activerecord - extends Sinatra with extension methods and Rake tasks for dealing with an SQL database using the ActiveRecord ORM.
 - pg - a module that allows Ruby programs to interact with the PostgreSQL database engine.
 - bcrypt - a hashing function that allows us to build a password security platform that can scale with computation power.
