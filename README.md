@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/C3real-kill3r/Micro_learning_app.svg?branch=develop)](https://travis-ci.org/C3real-kill3r/Micro_learning_app)
 [![Coverage Status](https://coveralls.io/repos/github/C3real-kill3r/Micro_learning_app/badge.svg?branch=develop)](https://coveralls.io/github/C3real-kill3r/Micro_learning_app?branch=develop)
 
-# Micro-learning app
+# Micro-learning App
 A responsive web application that sends you one page result with 20 snippets and links to pages relevant to the selected subject(s) you want to materials on. You select a category you'd like to get more materials from and the application fetches the results from the available sources provided by the [NewsAPI](https://newsapi.org/).
 
 ## Installation
