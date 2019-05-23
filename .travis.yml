@@ -1,0 +1,19 @@
+language: ruby
+rvm: 2.5.1
+
+branches:
+  only:
+  - /.*/
+
+cache: bundler
+
+services:
+  - postgresql
+before_script:
+  - bundle exec rake db:test:prepare
+script:
+  - bundle exec rspec spec/*
+
+after_success:
+  - bundle exec rake coveralls:push
+  - CI=true TRAVIS=true coveralls --verbose

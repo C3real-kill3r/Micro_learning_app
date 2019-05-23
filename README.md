@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/C3real-kill3r/Micro_learning_app.svg?branch=ch-intergret-travis-ci-166211689)](https://travis-ci.org/C3real-kill3r/Micro_learning_app)
+[![Coverage Status](https://coveralls.io/repos/github/C3real-kill3r/Micro_learning_app/badge.svg?branch=ch-intergret-travis-ci-166211689)](https://coveralls.io/github/C3real-kill3r/Micro_learning_app?branch=ch-intergret-travis-ci-166211689)
+
 # Micro_learning_app
 A responsive web application that sends you one page result with 20 snippets and links to pages relevant to the selected subject(s) you want to materials on. You select a category you'd like to get more materials from and the application fetches the results from the available sources provided by the [NewsAPI](https://newsapi.org/).
 
@@ -27,6 +30,7 @@ A responsive web application that sends you one page result with 20 snippets and
 - sinatra-formhelpers-ng - a suite of helper methods built to make building forms in Sinatra an easy task.
 - shotgun — This is an automatic reloading version of the rackup command that’s shipped with Rack. Meaning you can alter code in your server, and have it live without needing to restart it.
 - Database Cleaner — We will use this to manage our test database before it runs, while it runs, and after it runs.
+- Capybara —Yet another DSL which allows you to conduct feature/functional tests by simulating a real user interacting with your web page
 
 ## Technologies Used
 * [Ruby](https://www.ruby-lang.org/en/)
