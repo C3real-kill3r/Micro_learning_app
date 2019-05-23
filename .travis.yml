@@ -13,7 +13,3 @@ before_script:
   - bundle exec rake db:test:prepare
 script:
   - bundle exec rspec spec/*
-
-after_success:
-  - bundle exec rake coveralls:push
-  - CI=true TRAVIS=true coveralls --verbose
