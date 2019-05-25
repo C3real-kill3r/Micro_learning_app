@@ -1,5 +1,5 @@
 # set the database based on the current environment
-configure :production, :test do
+configure :development, :test do
     database_name = "microlearning_#{MicrolearningController.environment}"
     db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/#{database_name}")
     # connect ActiveRecord with the current database
@@ -15,7 +15,7 @@ configure :production, :test do
 end
 
 configure :production do
- db = URI.parse(ENV['DATABASE_URL'] || "postgres://localhost/d1rd8mgir50ja3")
+ db = URI.parse(ENV['DATABASE_URL'])
 
  ActiveRecord::Base.establish_connection(
    :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
