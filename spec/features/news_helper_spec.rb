@@ -16,7 +16,7 @@ module MicrolearningApp
                           .and_return({
                                           'name' => "ESPN",
                                           'url'=> 'https://www.espn.com',
-                                          'url_to_image' => "https//www.cnn/image.png"
+                                          'url_to_image' => "https//www.espn/espn.png"
                                       })
       end
       it "should fetch specific categories" do
@@ -25,7 +25,7 @@ module MicrolearningApp
                           .and_return({
                                           'name' => "ESPN",
                                           'url'=> 'https://www.espn.com',
-                                          'url_to_image' => "https//www.cnn/image.png"
+                                          'url_to_image' => "https//www.cnn/espn.png"
                                       })
       end
     end
