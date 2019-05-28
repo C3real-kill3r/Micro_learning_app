@@ -11,14 +11,6 @@ module MicrolearningApp
     end
 
     describe 'news_helper' do
-      it "should fetch all categories" do
-        allow(app).to receive(:fetch_all_categories)
-                          .and_return({
-                                          'name' => "ESPN",
-                                          'url'=> 'https://www.espn.com',
-                                          'url_to_image' => "https//www.espn/espn.png"
-                                      })
-      end
       it "should fetch specific categories" do
         allow(app).to receive(:fetch_all_categories)
                           .with(:category_name)
