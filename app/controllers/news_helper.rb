@@ -1,7 +1,7 @@
 require 'news-api'
 
 class News_Api
-  @@news_api = News.new ('746b9b93077d454098492aa96bee42a6')
+  @@news_api = News.new ('5acea22c53e341949f3356679e3d7655')
 
   # fetch specific category
   def fetch_specific_category(category)
